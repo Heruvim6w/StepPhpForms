@@ -9,7 +9,7 @@
 </head>
 <body>
     <form action="source.php" method="post">
-        <input type="email" name="tEmail" placeholder="E-mail">
+        <input type="email" name="tEmail" placeholder="E-mail" required>
         <br>
         <input type="checkbox" name="cSubscribe" value="Subscribe">
         <label for="cSubscribe">Subscribe</label>
