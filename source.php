@@ -70,5 +70,30 @@ elseif ($_POST['nNext'] === 'nNext2') {
     }
 
     $result = $countOfRightAnswersPage1 + $countOfRightAnswersPage2;
+
+    header('Refresh:0, url=page3.php?right_answers=' . $result);
+}
+elseif ($_POST['nNext'] === 'Finish') {
+    $result = $_POST['right_answers'];
+    $countOfRightAnswersPage3 = 0;
+
+    if (mb_strtolower($_POST['rQuest1']) === 'москва') {
+        $countOfRightAnswersPage3 = $countOfRightAnswersPage3 + 5;
+    }
+    if (mb_strtolower($_POST['rQuest2']) === 'собака') {
+        $countOfRightAnswersPage3 = $countOfRightAnswersPage3 + 5;
+    }
+    if (mb_strtolower($_POST['rQuest3']) === 'москва') {
+        $countOfRightAnswersPage3 = $countOfRightAnswersPage3 + 5;
+    }
+    if (mb_strtolower($_POST['rQuest4']) === 'москва') {
+        $countOfRightAnswersPage3 = $countOfRightAnswersPage3 + 5;
+    }
+    if (mb_strtolower($_POST['rQuest5']) === 'москва') {
+        $countOfRightAnswersPage3 = $countOfRightAnswersPage3 + 5;
+    }
+
+    $result = $result + $countOfRightAnswersPage3;
+
     echo '<p>Вы набрали ' . $result . ' баллов!';
 }
